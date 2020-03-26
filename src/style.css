@@ -1,0 +1,131 @@
+html {
+    background: #EDE574;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #E1F5C4, #EDE574);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #E1F5C4, #EDE574);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /*background:linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));*/
+    font-family: sans-serif;
+    color: white;
+}
+
+#wrapper {
+    margin: 150px auto;
+    height: 400px;
+    width: 400px;
+    /* background-color: #cf455c; */
+    background: #56CCF2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2F80ED, #56CCF2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ffffff;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffdd67;
+    padding-top: 10px;
+}  
+
+.location {
+    height: 7vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.location-timezone {
+    font-size: 1.7rem;
+    padding-left: 30px;
+    margin-bottom: 5px;
+}
+
+.degree-section {
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+}
+
+.icon {
+    height: 8vh;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.temperature-description {
+    padding: 10px 10px;
+    font-size: 1.7rem;
+    color: rgb(255, 187, 0);
+}
+
+.temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.t {
+    flex-direction: column;
+}
+
+.degree-section span {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.degree-section h2 {
+    font-size: 40px;
+
+} 
+
+#other-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+    padding-bottom: 25px;
+}
+
+.info-card {
+    padding: 2px;
+}
+
+#other-info p {
+    font-size: 1.1 rem;    
+}
+
+#other-info div {   
+    background-color: #fff;
+    color: #444444;
+    margin: 0 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.temperature-degree.humidity-section.windSpeed-section {
+    font-size: 20px;
+}
+
+
+
+
+  
+
+  

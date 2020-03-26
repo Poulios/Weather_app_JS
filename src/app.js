@@ -5,7 +5,11 @@ window.addEventListener('load',()=> {
     let temperatureDegree= document.querySelector('.temperature-degree');
     let locationTimezone= document.querySelector('.location-timezone');
     let temperatureSection = document.querySelector('.temperature-section');
-    const temperatureSpan = document.querySelector('.temperature-section span');
+    let humiditySection = document.querySelector('.humidity-section');
+    let windSection = document.querySelector('.windSpeed-section');
+
+
+    const temperatureSpan = document.querySelector('.temperature-section');
 
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position=>{
@@ -20,26 +24,33 @@ window.addEventListener('load',()=> {
             })
             .then(data => {
                 console.log(data);
-                const {temperature, summary, icon}= data.currently;
+                const {temperature, summary, icon, humidity, windSpeed}= data.currently;
+
                 //Set DOM Elements from the API
                 temperatureDegree.textContent = temperature;
                 temperatureDescription.textContent = summary;
+                humiditySection.textContent = humidity*100 + " %";
+                windSection.textContent = windSpeed + " km/h";
                 locationTimezone.textContent = data.timezone;
+
                 //Formula for Celsius
                 let celsius = (temperature-32)*(5/9);
+                temperatureDegree.textContent = Math.floor(celsius) + " C";
                 //Set Icon
                 setIcons(icon, document.querySelector('.icon'));
 
                 //Change temperature to Celsius/Farenheit
-                temperatureSection.addEventListener('click', ()=>{
-                    if(temperatureSpan.textContent === 'F'){
-                        temperatureSpan.textContent = "C";
-                        temperatureDegree.textContent = Math.floor(celsius);
-                    }else{
+                /* temperatureSection.addEventListener('click', ()=>{
+                    if(temperatureSpan.textContent === 'C'){
                         temperatureSpan.textContent = "F";
                         temperatureDegree.textContent = temperature;
+                        
+                    }else{
+                        temperatureSpan.textContent = "C";
+                        temperatureDegree.textContent = Math.floor(celsius);
+                        
                     }
-                })
+                }) */
 
             });
         });      
